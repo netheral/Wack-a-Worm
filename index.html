@@ -3,14 +3,12 @@
     <link rel="stylesheet" href="./src/styles.css">
   </head>
   <body>
-    <h1 id="title">Wack-a-mole</h1>
+    <h1 id="title">Wack-a-Worm</h1>
     <div>
       <div>
         <h2>Click start to play!</h2>
       </div>
-      <div class="box">
-      <button id="start">start</button>
-      </div>
+
       <div>
         <h2>score: <span id="score">0</span></h2>
       </div>
@@ -18,7 +16,7 @@
           <h2><span id="timer">0</span> seconds left.</h2>
       </div>
     </div>
-    
+    <div class="background"></div>
     <div class="grid">
       <div id="hole0" class="hole">
         <div id="mole0" class="mole"></div>
@@ -49,7 +47,9 @@
       </div>
       
     </div>
-    
+    <div>
+        <button id="start">start</button>
+        </div>
     <script src="./src/index.js"></script>
   </body>
 </html>

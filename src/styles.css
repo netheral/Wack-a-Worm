@@ -1,6 +1,5 @@
 html {
-  /*background: url('./assets/background.png') no-repeat center center fixed;*/
-  background: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/background.png?raw=true') no-repeat center center fixed;
+  background: url('../assets/desert.jpg') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,6 +8,7 @@ html {
   z-index:0;
   overflow: hidden;
 }
+
 
 h1 {
   text-align: center;
@@ -26,14 +26,14 @@ h2 {
 }
 
  #start {
-    
+   
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     text-align: center;
     border-color: #999;
     color: white;
     -webkit-text-stroke: 1px black;
     font-size: 32px;
-    background-color: rgb(155, 219, 166);
+    background-color: brown;
     border-radius: 15%;
     display: flex;
     display:block; margin: 0 auto;
@@ -51,7 +51,8 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  cursor: url('./assets/mallet.png'), pointer, auto;
+  cursor: url('../assets/mallet.png'), pointer;
+  margin-bottom: 10px;
 }
 
 .hole {
@@ -62,12 +63,11 @@ h2 {
 
 .hole:after {
   display: block;
-  background: url("./assets/hole.png") bottom center no-repeat;
-  background: url("https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/hole.png?raw=true") bottom center no-repeat;
+  background: url("../assets/hole.png") bottom center no-repeat; 
   background-size:contain;
   content:'';
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   position: absolute;
   bottom: -40%;
   z-index: 2;
@@ -75,8 +75,7 @@ h2 {
 }
 
 .mole {
-  /*background:url('./assets/mole.png') bottom center no-repeat;*/
-  background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
+  background:url('../assets/Worm.png') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
@@ -89,6 +88,6 @@ h2 {
 
 .hole.show .mole {
   top: 0;
-  /*transform: scale(1.1);*/
+  transform: scale(1.1);
 }
 

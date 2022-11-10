@@ -1,17 +1,18 @@
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
-
 const score = document.querySelector('#score'); 
 const timerDisplay = document.querySelector('#timer'); 
 const audioHit = new Audio("./assets/hit.mp3");
 const audioStart = new Audio('./assets/cyber.mp3')
 
-let time = 0;
+let time = 10;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "normal";
+let difficulty = "hard";
+
+startButton.addEventListener("click", startGame);
 
 /**
  * Generates a random integer within a range.
@@ -122,7 +123,7 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay('normal'); 
+  let delay = setDelay('hard'); 
   const hole = chooseHole(holes);  
   return showAndHide(hole, delay);
 }
@@ -181,8 +182,8 @@ function updateScore() {
 *
 */
 function clearScore(points) {
-  score.textContent = points;
   points = 0;
+  score.textContent = points;  
   return points;
 }
 
@@ -191,8 +192,7 @@ function clearScore(points) {
 * Updates the control board with the timer if time > 0
 *
 */
-function updateTimer() {
-  
+function updateTimer() {  
   if (time > 0){
     time -= 1;
     timerDisplay.textContent = time;
@@ -247,7 +247,6 @@ function setEventListeners(){
 */
 function setDuration(duration) {
   time = duration;
-  console.log(time);
   return time;
 }
 
@@ -258,9 +257,9 @@ function setDuration(duration) {
 *
 */
 function stopGame(){
-   audioStart.pause();  
+  audioStart.pause();  
   clearInterval(timer);
-  return "game stopped";
+    return "game stopped";
 }
 
 /**
@@ -270,18 +269,20 @@ function stopGame(){
 *
 */
 function startGame(){  
-  clearScore();  
-  setDuration(10);
+    points = 0;
+    clearScore();  
+    setDuration(10);
     showUp();    
     startTimer();
-    points = 0;
+    updateTimer();   
     audioStart.currentTime = 1.5;
     audioStart.play();
     audioStart.volume = 0.3;
+    setEventListeners();
   return "game started";
 }
-setEventListeners();
-startButton.addEventListener("click", startGame);
+
+
 
 
 // Please do not modify the code below.
