@@ -257,7 +257,8 @@ function setDuration(duration) {
 *
 */
 function stopGame(){
-  audioStart.pause();  
+  audioStart.pause();
+  audioStart.currentTime = 0;  
   clearInterval(timer);
     return "game stopped";
 }
