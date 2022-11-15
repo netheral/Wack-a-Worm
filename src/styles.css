@@ -6,7 +6,11 @@ html {
   -o-background-size: cover;
   background-size: cover;
   z-index:0;
-  overflow: hidden;
+  /*overflow: hidden;*/
+  display: flex;
+  justify-content: center;
+ 
+  
 }
 
 
@@ -46,13 +50,14 @@ h2 {
 }
 
 .grid {
-  width: 600px;
-  height: 400px;
+  width: 90%;
+  height: 75%;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   cursor: url('../assets/mallet.png'), pointer;
   margin-bottom: 10px;
+  justify-content: fill;
 }
 
 .hole {
@@ -91,3 +96,35 @@ h2 {
   transform: scale(1.1);
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.item {
+  width: 150px;
+}
+
+.item1 {
+
+}
+
+@media all and (max-width: 600px){
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+#start {
+  background: brown;
+  font-size: 28px;
+}
+.grid {
+  cursor: url('../assets/malletSmall.png'), pointer;
+  
+
+}
+}
